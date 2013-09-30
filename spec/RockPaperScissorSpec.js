@@ -26,7 +26,63 @@ describe("rock paper scissors",function(){
         expect(game.winner()).toBe(player2);
 
       });
-      
+
+    });
+
+    describe("paper", function(){
+      it("should beat rock", function(){
+
+        player1.picks("paper");
+        player2.picks("rock");
+        expect(game.winner()).toBe(player1);
+
+      });
+
+      it("should lose to scissors", function(){
+
+        player1.picks("scissors");
+        player2.picks("paper");
+        expect(game.winner()).toBe(player1);
+
+      });
+
+    });
+
+    describe("scissors", function(){
+      it("should beat paper", function(){
+
+        player1.picks("scissors");
+        player2.picks("paper");
+        expect(game.winner()).toBe(player1);
+
+      });
+
+      it("should lose to rock", function(){
+
+        player1.picks("scissors");
+        player2.picks("rock");
+        expect(game.winner()).toBe(player2);
+
+      });
+
+    });
+
+  });
+
+  describe("draw", function(){
+
+    describe("any identical picks", function(){
+      it("should result in no winner", function(){
+        var drawGameResults = ["rock", "paper", "scissors"].map(function(x){
+
+          player1.picks(x);
+          player2.picks(x);
+          return game.winner();
+        });
+
+    expect(drawGameResults).toEqual([null, null, null]);
+
+      });
     });
 
   });
