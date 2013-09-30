@@ -2,8 +2,8 @@ describe("Rock-Paper-Scissors", function() {
 
   beforeEach(function() {
 
-    player1 = new Player();
-    player2 = new Player();
+    player1 = new Player("Srik");
+    player2 = new Player("John");
     game = new Game(player1, player2);
 
   });
