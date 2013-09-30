@@ -1,6 +1,7 @@
 body {
 	text-align: center;
 	font-family: Arial;
+	background-size:50%;
 }
 
 #container {
@@ -21,4 +22,16 @@ h1 {
 	background-color: rgb(0,0,0);
 	color: #fff;
 	margin-top: 25px;
+}
+
+#player1_container {
+	display: none;
+}
+
+#player2_container {
+	display: none;
+}
+
+#picks {
+	display: none;
 }

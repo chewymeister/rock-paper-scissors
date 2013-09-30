@@ -14,6 +14,21 @@
   	$(document).ready(function() {
   	  $("#new_game").click(function(){
   	   	$("#new_game, #the_rules").fadeOut(1000);
+  	   	$("#player1_container").fadeTo(1000, 1);
+  	  });
+  	});
+
+  	$(document).ready(function() {
+  	  $("#player1_register").click(function(){
+  	   	$("#player1_container").fadeOut(1000);
+  	   	$("#player2_container").fadeTo(1000, 1);
+  	  });
+  	});
+
+  	$(document).ready(function() {
+  	  $("#player2_register").click(function(){
+  	   	$("#player2_container").fadeOut(1000);
+  	   	$("#picks").fadeTo(1000, 1);
   	  });
   	});
 
@@ -61,14 +76,14 @@
 		<div id="player1_container">
 			Player1:
 			<input type="text" id="player1_name" >
-			<input type="submit" value="submit" onclick="playerOneName();"/>
+			<input type="submit" value="submit" id="player1_register" onclick="playerOneName();"/>
 
 		</div>
 
 		<div id="player2_container">
 			Player2:
 			<input type="text" id="player2_name">
-			<input type="submit" value="submit" onclick="playerTwoName();"/>
+			<input type="submit" value="submit" id="player2_register" onclick="playerTwoName();"/>
 		</div>
 
 		<div id="picks">
