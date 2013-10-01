@@ -1,7 +1,7 @@
 <!DOCTYPE html>	
 <html>
 <head>
-  <title>Rock Paper, Scissor Lizard, Spock</title>
+  <title>Rock Paper, Scissor, Lizard, Spock</title>
 
   <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css">
   <link rel="stylesheet" type="text/css" href="./stylesheets/RockPaperScissors.css">
@@ -10,6 +10,15 @@
   <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
 
   <script>
+
+    // $(document).keypress(function() {
+    //   console.log( "Handler for .keypress() called." );
+    // });
+
+    $(document).keydown(function(event){ 
+      console.log("Key: " + event.which);
+    });
+
 
   	$(document).ready(function() {
   	  $("#new_game").click(function(){
