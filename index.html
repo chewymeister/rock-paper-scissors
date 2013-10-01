@@ -16,7 +16,21 @@
     // });
 
     $(document).keydown(function(event){ 
-      console.log("Key: " + event.which);
+      if (event.which == 87 || event.which == 219) {
+      document.getElementById('winner').innerHTML = "rock";
+      }
+      if (event.which == 69 || event.which == 221) {
+      document.getElementById('winner').innerHTML = "paper";
+      }
+      if (event.which == 65 || event.which == 186) {
+      document.getElementById('winner').innerHTML = "scissors";
+      }
+      if (event.which == 83 || event.which == 222) {
+      document.getElementById('winner').innerHTML = "lizard";
+      }
+      if (event.which == 68 || event.which == 220) {
+      document.getElementById('winner').innerHTML = "spock";
+      }
     });
 
 
@@ -41,8 +55,14 @@
   	  });
   	});
 
+    // function player1Pick() {
+
+    // }
+
 		var player1;
-		var player2; 
+		var player2;
+    // var player1Pick;
+    // var player2Pick;
 
   	function formSubmit() {
   		game = new Game(player1, player2);
@@ -55,14 +75,12 @@
   	function playerOneName() {
   		var player1Name = document.getElementById('player1_name').value;
   		player1 = new Player(player1Name);
-  		// document.getElementById('player1-name').innerHTML = "Hello! " + player1.name
   		return player1
   	}
 
   	function playerTwoName() {
   		var player2Name = document.getElementById('player2_name').value;
   		player2 = new Player(player2Name);
-  		// document.getElementById('player2-name').innerHTML = "Hello! " + player2.name
   		return player2
   	}
 
