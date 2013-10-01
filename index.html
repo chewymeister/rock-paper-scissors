@@ -1,0 +1,110 @@
+<!DOCTYPE html>	
+<html>
+<head>
+  <title>Rock Paper, Scissor, Lizard, Spock</title>
+
+  <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/RockPaperScissors.css">
+
+  <script type="text/javascript" src="./lib/RockPaperScissors.js"></script>
+  <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+
+  <script>
+
+    // $(document).keypress(function() {
+    //   console.log( "Handler for .keypress() called." );
+    // });
+
+    $(document).keydown(function(event){ 
+      console.log("Key: " + event.which);
+    });
+
+
+  	$(document).ready(function() {
+  	  $("#new_game").click(function(){
+  	   	$("#new_game, #the_rules").fadeOut(1000);
+  	   	$("#player1_container").fadeTo(1000, 1);
+  	  });
+  	});
+
+  	$(document).ready(function() {
+  	  $("#player1_register").click(function(){
+  	   	$("#player1_container").fadeOut(1000);
+  	   	$("#player2_container").fadeTo(1000, 1);
+  	  });
+  	});
+
+  	$(document).ready(function() {
+  	  $("#player2_register").click(function(){
+  	   	$("#player2_container").fadeOut(1000);
+  	   	$("#picks").fadeTo(1000, 1);
+  	  });
+  	});
+
+		var player1;
+		var player2; 
+
+  	function formSubmit() {
+  		game = new Game(player1, player2);
+
+  		player1.picks(document.getElementById('player1_pick').value);
+  		player2.picks(document.getElementById('player2_pick').value);
+  		document.getElementById('winner').innerHTML = "and the winner is..." + game.winner().name;
+  	}
+
+  	function playerOneName() {
+  		var player1Name = document.getElementById('player1_name').value;
+  		player1 = new Player(player1Name);
+  		// document.getElementById('player1-name').innerHTML = "Hello! " + player1.name
+  		return player1
+  	}
+
+  	function playerTwoName() {
+  		var player2Name = document.getElementById('player2_name').value;
+  		player2 = new Player(player2Name);
+  		// document.getElementById('player2-name').innerHTML = "Hello! " + player2.name
+  		return player2
+  	}
+
+  </script>
+</head>
+
+<body background="./images/hands.jpg">
+	<div id="container">
+		<h1>Rock Paper, Scissor Lizard, Spock</h1>
+		<ul>
+			<li>
+				<div class="button" id='new_game'>
+					New Game
+			</li>
+			<li>
+				<div class="button" id="the_rules">
+					The Rules
+			</li>
+
+		<div id="player1_container">
+			Player1:
+			<input type="text" id="player1_name" >
+			<input type="submit" value="submit" id="player1_register" onclick="playerOneName();"/>
+
+		</div>
+
+		<div id="player2_container">
+			Player2:
+			<input type="text" id="player2_name">
+			<input type="submit" value="submit" id="player2_register" onclick="playerTwoName();"/>
+		</div>
+
+		<div id="picks">
+			Player 1 pick <input type="text" id="player1_pick">
+			Player 2 pick <input type="text" id="player2_pick">
+			<input type="submit" value="submit" onclick="formSubmit();"/>
+		</div>
+
+		<h3 id="player1-name"></h3>
+		<h3 id="player2-name"></h3>
+
+		<h3 id="winner"></h3>
+	</div>
+</body>
+</html>
