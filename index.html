@@ -137,7 +137,7 @@
           }
         });
 
-         $(document).keypress(function() {
+        $(document).keypress(function() {
           if (player2Pick !== undefined) {
             document.getElementById('player2_pick').innerHTML = player2.name + " picks " + player2Pick;
           }
@@ -150,7 +150,10 @@
 
               player1.picks(player1Pick);
               player2.picks(player2Pick);
-              document.getElementById('winner').innerHTML = game.winner().name + " wins!!!";
+              var game_winner = game.winner();
+              // console.log(game_winner[0].name);
+              document.getElementById('message').innerHTML = game_winner[1];
+              document.getElementById('winner').innerHTML = game_winner[0].name + " wins!!!";
             });
           };
         });
@@ -204,6 +207,7 @@
     <h2 id="player1_pick"></h2>
     <h2 id="player2_pick"></h2>
 
+    <h2 id="message"></h2>
 		<h3 id="winner"></h3>
 	</div>
 </body>
