@@ -20,6 +20,32 @@
     var player1Pick;
     var player2Pick;
 
+    $(document).ready(function(){
+      $("#player1_name").keypress(function(event){
+        if (event.which == 13){
+          playerOneName();
+          $("#player1_container").fadeOut(1000, function(){
+            $("#player2_container").fadeTo(1000, 1);
+          });
+        console.log('hello');
+        console.log(player1.name);
+        };
+      })
+    });
+
+    $(document).ready(function(){
+      $("#player2_name").keypress(function(event){
+        if (event.which == 13){
+          playerTwoName();
+          $("#player2_container").fadeOut(1000, function(){
+            $("#start").fadeTo(1000, 1);
+          });
+        console.log('hello');
+        console.log(player2.name);
+        };
+      })
+    });
+
   	$(document).ready(function() {
   	  $("#new_game").click(function(){
   	   	$("#new_game, #the_rules").fadeOut(1000, function(){
@@ -55,14 +81,14 @@
   	function playerOneName() {
   		var player1Name = document.getElementById('player1_name').value;
   		player1 = new Player(player1Name);
-  		return player1
-  	}
+  		return player1;
+  	};
 
   	function playerTwoName() {
   		var player2Name = document.getElementById('player2_name').value;
   		player2 = new Player(player2Name);
-  		return player2
-  	}
+  		return player2;
+  	};
 
       // if (player1Pick !== undefined) {
       //   document.getElementById('player1_pick').innerHTML = player1.name + " picks " player1Pick;
