@@ -14,7 +14,7 @@ h1 {
 }
 
 .button {
-	height:40px;
+	height: auto;
 	width:200px;
 	margin: auto;
 	padding:25px;
@@ -36,6 +36,14 @@ h1 {
 	display: none;
 }
 
-#start{
+#start-button{
 	display: none;
+	border: none;
+	box-shadow: none;
+	padding: 25px;
+	height: auto;
+	margin-bottom: 50px;
+}
+#start-button input{
+	margin: auto;
 }

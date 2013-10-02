@@ -24,8 +24,8 @@
       $("#player1_name").keypress(function(event){
         if (event.which == 13){
           playerOneName();
-          $("#player1_container").fadeOut(1000, function(){
-            $("#player2_container").fadeTo(1000, 1);
+          $("#player1_container").fadeOut(500, function(){
+            $("#player2_container").fadeTo(500, 1);
           });
         console.log('hello');
         console.log(player1.name);
@@ -37,8 +37,8 @@
       $("#player2_name").keypress(function(event){
         if (event.which == 13){
           playerTwoName();
-          $("#player2_container").fadeOut(1000, function(){
-            $("#start").fadeTo(1000, 1);
+          $("#player2_container").fadeOut(500, function(){
+            $("#start-button").fadeTo(500, 1);
           });
         console.log('hello');
         console.log(player2.name);
@@ -48,27 +48,29 @@
 
   	$(document).ready(function() {
   	  $("#new_game").click(function(){
-  	   	$("#new_game, #the_rules").fadeOut(1000, function(){
-  	   	$("#player1_container").fadeTo(1000, 1);
+  	   	$("#new_game, #the_rules").fadeOut(500, function(){
+  	   	$("#player1_container").fadeTo(500, 1);
         });
   	  });
   	});
 
   	$(document).ready(function() {
   	  $("#player1_register").click(function(){
-  	   	$("#player1_container").fadeOut(1000, function(){
-  	   	$("#player2_container").fadeTo(1000, 1);
+  	   	$("#player1_container").fadeOut(500, function(){
+  	   	$("#player2_container").fadeTo(500, 1);
         });
   	  });
   	});
 
   	$(document).ready(function() {
-  	  $("#player2_register").click(function(){
-  	   	$("#player2_container").fadeOut(1000, function(){
-  	   	$("#start").fadeTo(1000, 1);
+  	  $("#start-button").click(function(){
+  	   	$("#start-button").fadeOut(1000, function(){
+  	   	// $("#start").fadeTo(1000, 1);
         });
   	  });
   	});
+
+
 
   	// function formSubmit() {
   	// 	game = new Game(player1, player2);
@@ -231,7 +233,7 @@
 		</div> -->
 
     <div id="start">
-      <input type="submit" value="Start">
+      <input id="start-button" class="button" type="submit" value="Start">
     </div>
 
     <div id="pick"></div>
