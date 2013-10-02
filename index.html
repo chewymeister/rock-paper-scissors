@@ -181,8 +181,14 @@
               player2.picks(player2Pick);
               var game_winner = game.winner();
               // console.log(game_winner[0].name);
-              document.getElementById('message').innerHTML = game_winner[1];
-              document.getElementById('winner').innerHTML = game_winner[0].name + " wins!!!";
+              if(game_winner[0] !== 'Draw! Now duke it out to see who wins...'){
+                document.getElementById('message').innerHTML = game_winner[1];
+                document.getElementById('winner').innerHTML = game_winner[0].name + " wins!!!";
+              }
+              else {
+                document.getElementById('message').innerHTML = game_winner[0];
+                $("#winner").empty();
+              }
             });
           };
         });
@@ -208,14 +214,14 @@
 		<div id="player1_container">
 			Player1:
 			<input type="text" id="player1_name" >
-			<input type="submit" value="submit" id="player1_register" onclick="playerOneName();"/>
+			<!-- <input type="submit" value="submit" id="player1_register" onclick="playerOneName();"/> -->
 
 		</div>
 
 		<div id="player2_container">
 			Player2:
 			<input type="text" id="player2_name">
-			<input type="submit" value="submit" id="player2_register" onclick="playerTwoName();"/>
+			<!-- <input type="submit" value="submit" id="player2_register" onclick="playerTwoName();"/> -->
 		</div>
 <!-- 
 		<div id="picks">
