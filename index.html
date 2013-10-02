@@ -21,55 +21,77 @@
     var player2Pick;
 
     $(document).keydown(function(event){ 
+      // w
       if (event.which == 87) {
          player1Pick = "rock";
         return player1Pick;
       }
+      // e
       if (event.which == 69) {
         player1Pick = "paper";
         return player1Pick;
       }
+      // a
       if (event.which == 65) {
         player1Pick = "scissors";
         return player1Pick;
       }
+      // s
       if (event.which == 83) {
         player1Pick = "lizard";
         return player1Pick;
       }
+      // d
       if (event.which == 68) {
         player1Pick = "spock";
         return player1Pick;
       }
-      if (event.which == 219) {
+      // i 219
+      if (event.which == 73) {
         player2Pick = "rock";
-        return player1Pick;
+        return player2Pick;
       }
-      if (event.which == 221) {
+      // o 221
+      if (event.which == 79) {
         player2Pick = "paper";
-        return player1Pick;
+        return player2Pick;
       }
-      if (event.which == 186) {
+      // j 186
+      if (event.which == 74) {
         player2Pick = "scissors";
-        return player1Pick;
+        return player2Pick;
       }
-      if (event.which == 222) {
+      // k 222
+      if (event.which == 75) {
         player2Pick = "lizard";
-        return player1Pick;
+        return player2Pick;
       }
-      if (event.which == 220) {
+      // l 220
+      if (event.which == 76) {
         player2Pick = "spock";
-        return player1Pick;
+        return player2Pick;
       };
-
-      if (event.which == 13) {
+      // 16
+      if (event.which == 81) {
         console.log(player1Pick);
       };
 
-      if (event.which == 16) {
+      if (event.which == 13) {
         console.log(player2Pick);
       };
     });
+
+    // $(document).keypress(function() {
+    //   if (player1Pick !== undefined && player2Pick !== undefined) {
+    //     $(document).ready(function() {
+    //       game = new Game(player1, player2);
+
+    //       player1.picks(player1Pick);
+    //       player2.picks(player2Pick);
+    //       document.getElementById('winner').innerHTML = game.winner().name + " wins!!!";
+    //     });
+    //   };
+    // });
 
   	$(document).ready(function() {
   	  $("#new_game").click(function(){
@@ -88,22 +110,17 @@
   	$(document).ready(function() {
   	  $("#player2_register").click(function(){
   	   	$("#player2_container").fadeOut(1000);
-  	   	$("#picks").fadeTo(1000, 1);
+  	   	$("#start").fadeTo(1000, 1);
   	  });
   	});
 
+  	// function formSubmit() {
+  	// 	game = new Game(player1, player2);
 
-    $(document).ready(function(){
-        document.getElementById('winner').innerHTML =  player1Pick;
-    });
-
-  	function formSubmit() {
-  		game = new Game(player1, player2);
-
-  		player1.picks(document.getElementById('player1_pick').value);
-  		player2.picks(document.getElementById('player2_pick').value);
-  		document.getElementById('winner').innerHTML = "and the winner is..." + game.winner().name;
-  	}
+  	// 	player1.picks(document.getElementById('player1_pick').value);
+  	// 	player2.picks(document.getElementById('player2_pick').value);
+  	// 	document.getElementById('winner').innerHTML = "and the winner is..." + game.winner().name;
+  	// }
 
   	function playerOneName() {
   		var player1Name = document.getElementById('player1_name').value;
@@ -117,6 +134,21 @@
   		return player2
   	}
 
+    $(document).ready (function() {
+      document.getElementById('start').onclick = function(){ 
+        $(document).keypress(function() {
+          if (player1Pick !== undefined && player2Pick !== undefined) {
+            $(document).ready(function() {
+              game = new Game(player1, player2);
+
+              player1.picks(player1Pick);
+              player2.picks(player2Pick);
+              document.getElementById('winner').innerHTML = game.winner().name + " wins!!!";
+            });
+          };
+        });
+      };
+    });
   </script>
 </head>
 
@@ -145,12 +177,18 @@
 			<input type="text" id="player2_name">
 			<input type="submit" value="submit" id="player2_register" onclick="playerTwoName();"/>
 		</div>
-
+<!-- 
 		<div id="picks">
 			Player 1 pick <input type="text" id="player1_pick">
 			Player 2 pick <input type="text" id="player2_pick">
 			<input type="submit" value="submit" onclick="formSubmit();"/>
-		</div>
+		</div> -->
+
+    <div id="start">
+      <input type="submit" value="Start" id="start"/>
+    </div>
+
+    <div id="pick"></div>
 
 		<h3 id="player1-name"></h3>
 		<h3 id="player2-name"></h3>
