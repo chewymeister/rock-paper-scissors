@@ -22,22 +22,25 @@
 
   	$(document).ready(function() {
   	  $("#new_game").click(function(){
-  	   	$("#new_game, #the_rules").fadeOut(1000);
+  	   	$("#new_game, #the_rules").fadeOut(1000, function(){
   	   	$("#player1_container").fadeTo(1000, 1);
+        });
   	  });
   	});
 
   	$(document).ready(function() {
   	  $("#player1_register").click(function(){
-  	   	$("#player1_container").fadeOut(1000);
+  	   	$("#player1_container").fadeOut(1000, function(){
   	   	$("#player2_container").fadeTo(1000, 1);
+        });
   	  });
   	});
 
   	$(document).ready(function() {
   	  $("#player2_register").click(function(){
-  	   	$("#player2_container").fadeOut(1000);
+  	   	$("#player2_container").fadeOut(1000, function(){
   	   	$("#start").fadeTo(1000, 1);
+        });
   	  });
   	});
 
