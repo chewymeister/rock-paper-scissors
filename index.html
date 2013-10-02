@@ -20,79 +20,6 @@
     var player1Pick;
     var player2Pick;
 
-    // $(document).keydown(function(event){ 
-    //   // w
-    //   if (event.which == 87) {
-    //      player1Pick = "rock";
-    //     return player1Pick;
-    //   }
-    //   // e
-    //   if (event.which == 69) {
-    //     player1Pick = "paper";
-    //     return player1Pick;
-    //   }
-    //   // a
-    //   if (event.which == 65) {
-    //     player1Pick = "scissors";
-    //     return player1Pick;
-    //   }
-    //   // s
-    //   if (event.which == 83) {
-    //     player1Pick = "lizard";
-    //     return player1Pick;
-    //   }
-    //   // d
-    //   if (event.which == 68) {
-    //     player1Pick = "spock";
-    //     return player1Pick;
-    //   }
-    //   // i 219
-    //   if (event.which == 73) {
-    //     player2Pick = "rock";
-    //     return player2Pick;
-    //   }
-    //   // o 221
-    //   if (event.which == 79) {
-    //     player2Pick = "paper";
-    //     return player2Pick;
-    //   }
-    //   // j 186
-    //   if (event.which == 74) {
-    //     player2Pick = "scissors";
-    //     return player2Pick;
-    //   }
-    //   // k 222
-    //   if (event.which == 75) {
-    //     player2Pick = "lizard";
-    //     return player2Pick;
-    //   }
-    //   // l 220
-    //   if (event.which == 76) {
-    //     player2Pick = "spock";
-    //     return player2Pick;
-    //   };
-    //   // 16
-    //   if (event.which == 81) {
-    //     console.log(player1Pick);
-    //   };
-
-    //   if (event.which == 13) {
-    //     console.log(player2Pick);
-    //   };
-    // });
-
-    // $(document).keypress(function() {
-    //   if (player1Pick !== undefined && player2Pick !== undefined) {
-    //     $(document).ready(function() {
-    //       game = new Game(player1, player2);
-
-    //       player1.picks(player1Pick);
-    //       player2.picks(player2Pick);
-    //       document.getElementById('winner').innerHTML = game.winner().name + " wins!!!";
-    //     });
-    //   };
-    // });
-
   	$(document).ready(function() {
   	  $("#new_game").click(function(){
   	   	$("#new_game, #the_rules").fadeOut(1000);
@@ -134,68 +61,88 @@
   		return player2
   	}
 
+      // if (player1Pick !== undefined) {
+      //   document.getElementById('player1_pick').innerHTML = player1.name + " picks " player1Pick;
+      // };
+          // } else if (player2Pick !== undefined) {
+          //   document.getElementById('player2_pick').innerHTML = player2.name + " picks " player2Pick;
+          // };
+
     $(document).ready (function() {
       document.getElementById('start').onclick = function(){ 
         $(document).keydown(function(event){ 
-      // w
-      if (event.which == 87) {
-         player1Pick = "rock";
-        return player1Pick;
-      }
-      // e
-      if (event.which == 69) {
-        player1Pick = "paper";
-        return player1Pick;
-      }
-      // a
-      if (event.which == 65) {
-        player1Pick = "scissors";
-        return player1Pick;
-      }
-      // s
-      if (event.which == 83) {
-        player1Pick = "lizard";
-        return player1Pick;
-      }
-      // d
-      if (event.which == 68) {
-        player1Pick = "spock";
-        return player1Pick;
-      }
-      // i 219
-      if (event.which == 73) {
-        player2Pick = "rock";
-        return player2Pick;
-      }
-      // o 221
-      if (event.which == 79) {
-        player2Pick = "paper";
-        return player2Pick;
-      }
-      // j 186
-      if (event.which == 74) {
-        player2Pick = "scissors";
-        return player2Pick;
-      }
-      // k 222
-      if (event.which == 75) {
-        player2Pick = "lizard";
-        return player2Pick;
-      }
-      // l 220
-      if (event.which == 76) {
-        player2Pick = "spock";
-        return player2Pick;
-      };
-      // 16
-      if (event.which == 81) {
-        console.log(player1Pick);
-      };
+          // w
+          if (event.which == 87) {
+             player1Pick = "rock";
+            return player1Pick;
+          }
+          // e
+          if (event.which == 69) {
+            player1Pick = "paper";
+            return player1Pick;
+          }
+          // a
+          if (event.which == 65) {
+            player1Pick = "scissors";
+            return player1Pick;
+          }
+          // s
+          if (event.which == 83) {
+            player1Pick = "lizard";
+            return player1Pick;
+          }
+          // d
+          if (event.which == 68) {
+            player1Pick = "spock";
+            return player1Pick;
+          }
+          // i 219
+          if (event.which == 73) {
+            player2Pick = "rock";
+            return player2Pick;
+          }
+          // o 221
+          if (event.which == 79) {
+            player2Pick = "paper";
+            return player2Pick;
+          }
+          // j 186
+          if (event.which == 74) {
+            player2Pick = "scissors";
+            return player2Pick;
+          }
+          // k 222
+          if (event.which == 75) {
+            player2Pick = "lizard";
+            return player2Pick;
+          }
+          // l 220
+          if (event.which == 76) {
+            player2Pick = "spock";
+            return player2Pick;
+          };
+          // 16
+          if (event.which == 81) {
+            console.log(player1Pick);
+          };
 
-      if (event.which == 13) {
-        console.log(player2Pick);
-      };
-    });
+          if (event.which == 13) {
+            console.log(player2Pick);
+          };
+        });
+
+        $(document).keypress(function() {
+          if (player1Pick !== undefined) {
+            document.getElementById('player1_pick').innerHTML = player1.name + " picks " + player1Pick;
+          }
+        });
+
+         $(document).keypress(function() {
+          if (player2Pick !== undefined) {
+            document.getElementById('player2_pick').innerHTML = player2.name + " picks " + player2Pick;
+          }
+        });
+
         $(document).keypress(function() {
           if (player1Pick !== undefined && player2Pick !== undefined) {
             $(document).ready(function() {
@@ -209,6 +156,7 @@
         });
       };
     });
+
   </script>
 </head>
 
@@ -252,6 +200,9 @@
 
 		<h3 id="player1-name"></h3>
 		<h3 id="player2-name"></h3>
+
+    <h2 id="player1_pick"></h2>
+    <h2 id="player2_pick"></h2>
 
 		<h3 id="winner"></h3>
 	</div>
